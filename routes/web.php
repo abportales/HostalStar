@@ -41,3 +41,9 @@ Route::get('/cmd/{command}', function ($command) {
     Artisan::call($command);
     dd(Artisan::output());
 });
+
+//ejecutar comandos directo en el server, uso de dev-ops
+Route::get('/seeds', function () {
+    Artisan::call('db:seed');
+    dd(Artisan::output());
+});
