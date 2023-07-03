@@ -28,3 +28,6 @@
         </div>
     </section>
 @endsection
+@section('css')
+    <link rel="stylesheet" href="{{ asset('/css/admin_custom.css')}}">
+@stop
