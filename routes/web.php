@@ -17,25 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/general', function () {
-        return view('general.index');
-    })->name('general');
-});
-
-Route::resource('/rooms', RoomController::class);
-Route::resource('/rents', RentController::class);
-Route::resource('/general', GeneralController::class);
-Route::get('/general/{id}/{balance}', [GeneralController::class, 'charged'])->name('general.charged');
-
 //ejecutar comandos directo en el server, uso de dev-ops
 Route::get('/cmd/{command}', function ($command) {
     Artisan::call($command);
@@ -47,3 +28,4 @@ Route::get('/seeds', function () {
     Artisan::call('db:seed');
     dd(Artisan::output());
 });
+

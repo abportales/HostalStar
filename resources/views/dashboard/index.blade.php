@@ -12,5 +12,5 @@
 @stop
 
 @section('css')
-    <link rel="stylesheet" href="/css/admin_custom.css">
+    <link rel="stylesheet" href="public/vendor/adminlte/dist/css/admin_custom.css">
 @stop
